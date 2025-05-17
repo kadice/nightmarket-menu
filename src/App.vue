@@ -1,5 +1,5 @@
 <template>
-    <div class="scope-root relative min-h-screen flex justify-center items-start">
+    <div class="scope-root relative min-h-screen flex md:justify-center items-start">
         <div style="display: none">
             <img src="/image/0.png">
             <img src="/image/1.png">
@@ -27,11 +27,11 @@
             class="image-bg fixed inset-0 -z-1 w-full min-h-screen bg-fixed bg-contain bg-center bg-[url('/image/bg-real.jpg')] blur-[4px] scale-180">
         </div>
 
-        <div class="min-w-[56rem] max-w-[56rem] bg-black/20 flex justify-center">
+        <div class="min-w-[56rem] max-w-[56rem] bg-black/20 md:flex justify-center">
 
             <!-- MENU -->
             <div
-                class="menu w-[32rem] p-6 m-6 border-2 border-gray-400 font-bold bg-[var(--sheet-color)] text-[var(--ink-color)]">
+                class="menu min-w-[28rem] max-w-[28rem] px-4 py-6 m-6 border-2 border-gray-400 font-bold bg-[var(--sheet-color)] text-[var(--ink-color)]">
 
                 <!-- 標題區 -->
                 <div class="grid gap-y-2 mb-1">
@@ -40,11 +40,11 @@
                         凱　哥　燒　烤
                     </div>
 
-                    <div class="info flex w-full px-1 pt-3">
-                        <span class="flex-1">小本經營，只收現金！</span>
+                    <div class="info flex w-full px-1 pt-2">
+                        <span class="flex-1">小本經營，只收現金</span>
                         <span class="relative text-right">
                             <img class="togo-img" src="/image/checked.png">
-                            □外帶 □內用 桌號：＿＿合計：＿＿＿＿＿＿gil
+                            □外帶 □內用 桌號：＿＿合計：＿＿＿＿＿gil
                             <!-- 總價 -->
                             <div class="sum flex">
                                 <img v-for="(src, index) in sumImgSrcList" :key="index" :src="src" />
@@ -67,10 +67,10 @@
                         <!-- 品項BOX -->
                         <div class="divide-y divide-[var(--ink-color)]">
                             <div v-for="(item, index) in category.items" :key="index"
-                                class="grid grid-cols-7 items-center divide-x-4 divide-[var(--ink-color)]">
+                                class="grid grid-cols-8 items-center divide-x-4 divide-[var(--ink-color)]">
 
                                 <!-- 品項資訊 -->
-                                <div class="col-span-5 h-full flex flex-col justify-center px-1">
+                                <div class="col-span-6 h-full flex flex-col justify-center px-1">
                                     <div>
                                         <span class="pr-1">{{ item.name }}</span>
                                         <span class="text-sm text-[var(--name2-text-color)]">{{ item.name2 }}</span>
@@ -83,13 +83,13 @@
                                     {{ item.price }}</div>
 
                                 <!-- 數量-->
-                                <div class="col-span-1 h-full flex items-center justify-center">
+                                <div class="col-span-1 h-full flex items-center justify-center relative">
                                     <button v-if="printMode == false" @click="decrease(cIndex, index)"
                                         class="text-gray-400 z-10">－</button>
 
-                                    <div class="flex-1 relative">
+                                    <div class="flex-1">
                                         <img :src="countImgSrc(item.count)"
-                                            class="absolute -top-5 w-[60px] h-[55px] z-0" />
+                                            class="absolute -top-1 left-1 w-[50px] h-[55px] z-0" />
                                     </div>
 
                                     <button v-if="printMode == false" @click="increase(cIndex, index)"
@@ -101,7 +101,7 @@
                 </div>
 
                 <!-- 資訊區 -->
-                <div class="info -mb-2 px-2">
+                <div class="info -mb-2 px-2 pt-1">
                     <div>請填妥菜單後交給老闆，現點現做請耐心等候，感謝！</div>
                     <div>店址：元素服提風區 伊修加德居住區擴張街10-56號 攤位09</div>
                 </div>
@@ -162,7 +162,7 @@ const categories = reactive([
     {
         name: '炭燒串烤 grill',
         items: [
-            { short: '牛串', name: '超多汁牛肉烤串', name2: 'beef', price: 1200, msg: '來自拉札罕放牧區，這牛的肉比光戰還緊實，烤了也比較香', count: 0 },
+            { short: '牛串', name: '超多汁牛肉烤串', name2: 'beef', price: 1200, msg: '嚴選拉札罕牛，這牛的肉比光戰還緊實，烤了也比較香', count: 0 },
             { short: '鳥串', name: 'DoDo鳥腿肉烤串', name2: 'dodo', price: 1000, msg: '渡渡鳥界滿級精選大腿肉，好吃程度不輸你家陸行鳥', count: 0 },
             { short: '魚串', name: '爆爆魚串', name2: 'fish', price: 1000, msg: '海賊眾說吃這魚可以加直爆，不管你信不信反正我是信了', count: 0 },
             { short: '青菜', name: '健康烤時蔬', name2: 'vegetable', price: 1000, msg: '蔬菜的使命就是幫你少一點罪惡感，烤了更像在做健康選擇', count: 0 },
