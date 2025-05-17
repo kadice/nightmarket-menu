@@ -2,15 +2,15 @@
     <div class="scope-root relative min-h-screen flex justify-center items-start">
 
         <!-- 模糊背景層 -->
-        <div
+        <div v-if="printMode == false"
             class="image-bg fixed inset-0 -z-1 w-full min-h-screen bg-fixed bg-cover bg-center bg-[url('/image/bg-real.jpg')] blur-[4px] scale-110">
         </div>
         <!-- 截宣傳圖用 -->
-        <!-- <div
+        <div v-else
             class="image-bg fixed inset-0 -z-1 w-full min-h-screen bg-fixed bg-contain bg-center bg-[url('/image/bg-real.jpg')] blur-[4px] scale-180">
-        </div> -->
+        </div>
 
-        <div class="max-w-[56rem] bg-black/20 flex">
+        <div class="min-w-[56rem] max-w-[56rem] bg-black/20 flex justify-center">
 
             <!-- MENU -->
             <div
@@ -67,14 +67,14 @@
 
                                 <!-- 數量-->
                                 <div class="col-span-1 h-full flex items-center justify-center">
-                                    <button @click="decrease(cIndex, index)" class="text-gray-400 z-10">－</button>
+                                    <button v-if="printMode == false" @click="decrease(cIndex, index)" class="text-gray-400 z-10">－</button>
 
                                     <div class="flex-1 relative">
                                         <img :src="countImgSrc(item.count)"
                                             class="absolute -top-5 w-[60px] h-[55px] z-0" />
                                     </div>
 
-                                    <button @click="increase(cIndex, index)" class="text-gray-400 z-10">＋</button>
+                                    <button v-if="printMode == false" @click="increase(cIndex, index)" class="text-gray-400 z-10">＋</button>
                                 </div>
                             </div>
                         </div>
@@ -89,7 +89,7 @@
             </div>
 
             <!-- 工具箱 -->
-            <div class="p-4">
+            <div class="p-4" v-if="printMode == false">
                 <div
                     class="bg-yellow-50 border-4 border-[#bd4747] rounded-lg shadow-2xl flex flex-col gap-2 p-4 m-2 w-36">
                     <!-- 送單按鈕 -->
@@ -172,6 +172,14 @@ const categories = reactive([
         ],
     },
 ]);
+
+const printMode = ref(false)
+
+// 讓你能在瀏覽器 console 裡用 window.toggleDebug() 切換它
+window.togglePrintMode = () => {
+  printMode.value = !printMode.value
+  console.log('printMode:', printMode.value)
+}
 
 // categories[0].items[0].count = 1
 // categories[0].items[1].count = 2
