@@ -5,6 +5,10 @@
         <div
             class="image-bg fixed inset-0 -z-1 w-full min-h-screen bg-fixed bg-cover bg-center bg-[url('/image/bg-real.jpg')] blur-[4px] scale-110">
         </div>
+        <!-- 截宣傳圖用 -->
+        <!-- <div
+            class="image-bg fixed inset-0 -z-1 w-full min-h-screen bg-fixed bg-contain bg-center bg-[url('/image/bg-real.jpg')] blur-[4px] scale-180">
+        </div> -->
 
         <div class="max-w-[56rem] bg-black/20 flex">
 
