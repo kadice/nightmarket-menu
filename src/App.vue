@@ -1,6 +1,23 @@
 <template>
     <div class="scope-root relative min-h-screen flex justify-center items-start">
-
+        <div style="display: none">
+            <img src="/image/0.png">
+            <img src="/image/1.png">
+            <img src="/image/2.png">
+            <img src="/image/3.png">
+            <img src="/image/4.png">
+            <img src="/image/5.png">
+            <img src="/image/6.png">
+            <img src="/image/7.png">
+            <img src="/image/8.png">
+            <img src="/image/9.png">
+            <img src="/image/正_0.png">
+            <img src="/image/正_1.png">
+            <img src="/image/正_2.png">
+            <img src="/image/正_3.png">
+            <img src="/image/正_4.png">
+            <img src="/image/正_5.png">
+        </div>
         <!-- 模糊背景層 -->
         <div v-if="printMode == false"
             class="image-bg fixed inset-0 -z-1 w-full min-h-screen bg-fixed bg-cover bg-center bg-[url('/image/bg-real.jpg')] blur-[4px] scale-110">
@@ -67,14 +84,16 @@
 
                                 <!-- 數量-->
                                 <div class="col-span-1 h-full flex items-center justify-center">
-                                    <button v-if="printMode == false" @click="decrease(cIndex, index)" class="text-gray-400 z-10">－</button>
+                                    <button v-if="printMode == false" @click="decrease(cIndex, index)"
+                                        class="text-gray-400 z-10">－</button>
 
                                     <div class="flex-1 relative">
                                         <img :src="countImgSrc(item.count)"
                                             class="absolute -top-5 w-[60px] h-[55px] z-0" />
                                     </div>
 
-                                    <button v-if="printMode == false" @click="increase(cIndex, index)" class="text-gray-400 z-10">＋</button>
+                                    <button v-if="printMode == false" @click="increase(cIndex, index)"
+                                        class="text-gray-400 z-10">＋</button>
                                 </div>
                             </div>
                         </div>
@@ -177,8 +196,8 @@ const printMode = ref(false)
 
 // 讓你能在瀏覽器 console 裡用 window.toggleDebug() 切換它
 window.togglePrintMode = () => {
-  printMode.value = !printMode.value
-  console.log('printMode:', printMode.value)
+    printMode.value = !printMode.value
+    console.log('printMode:', printMode.value)
 }
 
 // categories[0].items[0].count = 1
