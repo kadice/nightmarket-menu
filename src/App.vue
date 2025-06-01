@@ -27,14 +27,14 @@
             class="image-bg fixed inset-0 -z-1 w-full min-h-screen bg-fixed bg-contain bg-center bg-[url('/image/bg-real.jpg')] blur-[4px] scale-180">
         </div>
 
-        <div class="min-w-[56rem] max-w-[56rem] bg-black/20 md:flex justify-center">
+        <div class="min-w-[56rem] max-w-[56rem] min-h-screen bg-black/20 md:flex justify-center">
 
             <!-- MENU -->
             <div
-                class="menu min-w-[28rem] max-w-[28rem] px-4 py-6 m-6 border-2 border-gray-400 font-bold bg-[var(--sheet-color)] text-[var(--ink-color)]">
+                class="menu min-w-[28rem] max-w-[28rem] h-fit px-4 py-6 m-6 border-2 border-gray-400 font-bold bg-[var(--sheet-color)] text-[var(--ink-color)]">
 
                 <!-- 標題區 -->
-                <div class="grid gap-y-2 mb-1">
+                <div class="grid gap-y-3 mb-1">
                     <div
                         class="title bg-[var(--ink-color)] text-[var(--sheet-color)] border-2 border-[var(--ink-color)] text-center py-1 text-[32px]">
                         凱　哥　燒　烤
@@ -55,7 +55,7 @@
                 </div>
 
                 <!-- 內容區 -->
-                <div class="grid gap-y-4">
+                <div class="grid gap-y-5">
                     <!-- 分類BOX -->
                     <div v-for="(category, cIndex) in categories" :key="cIndex"
                         class="bg-[var(--sheet-color)] border-4 border-[var(--ink-color)]">
@@ -70,7 +70,7 @@
                                 class="grid grid-cols-8 items-center divide-x-4 divide-[var(--ink-color)]">
 
                                 <!-- 品項資訊 -->
-                                <div class="col-span-6 h-full flex flex-col justify-center px-1">
+                                <div class="col-span-6 h-full flex flex-col justify-center px-1 pt-1">
                                     <div>
                                         <span class="pr-1">{{ item.name }}</span>
                                         <span class="text-sm text-[var(--name2-text-color)]">{{ item.name2 }}</span>
@@ -79,7 +79,7 @@
                                 </div>
 
                                 <!-- 價格 -->
-                                <div class="price col-span-1 h-full flex items-center justify-end px-1">
+                                <div class="price col-span-1 h-full flex items-center justify-end px-1 pt-1">
                                     {{ item.price }}</div>
 
                                 <!-- 數量-->
