@@ -108,7 +108,7 @@
             </div>
 
             <!-- 工具箱 -->
-            <div class="max-w-[28rem] mx-auto md:p-4 mt-2 mb-8" v-if="printMode == false">
+            <div class="max-w-[28rem] mx-auto md:mx-0 md:p-4 mt-2 mb-8" v-if="printMode == false">
                 <div class="bg-yellow-50 border-4 border-[#bd4747] rounded-lg shadow-2xl flex flex-col gap-2 p-4">
                     <!-- 公告 -->
                     <div
