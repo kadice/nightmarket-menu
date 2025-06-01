@@ -109,12 +109,22 @@
 
             <!-- 工具箱 -->
             <div class="p-4" v-if="printMode == false">
-                <div
-                    class="bg-yellow-50 border-4 border-[#bd4747] rounded-lg shadow-2xl flex flex-col gap-2 p-4 m-2 w-36">
+                <div class="bg-yellow-50 border-4 border-[#bd4747] rounded-lg shadow-2xl flex flex-col gap-2 p-4 m-2">
+                    <!-- 公告 -->
+                    <div
+                        class="notice w-full h-40 p-2 bg-white text-black font-semibold rounded-lg shadow-inner border border-gray-300 overflow-y-auto whitespace-pre-wrap leading-relaxed text-[18px] divide-y divide-gray-300">
+
+                        <div>🔥凱哥燒烤🔥將於6/21快閃登場！敬請期待</div>
+                        <div><span>06/01 16:14</span>是真的沒有臭豆腐，不要再問了</div>
+                        <div><span>06/01 08:30</span>單一品項限購五份，吃這麼多你是想幹嘛？</div>
+                        <div></div>
+
+                    </div>
+
                     <!-- 送單按鈕 -->
                     <button @click="showModal = true"
                         class="bg-[#bd4747] text-white font-bold py-2 px-3 rounded hover:bg-red-700 transition-all duration-150">
-                        咻咻咻～
+                        這是一顆神奇的按鈕，咻咻咻～
                     </button>
                 </div>
             </div>
@@ -257,6 +267,14 @@ const copyOrderText = () => {
 </script>
 
 <style scoped>
+.notice > div > span {
+    color: #777;
+    font-size: 14px;
+    padding-right: 4px;
+    display: block;
+    margin-bottom: -7px;
+}
+
 .scope-root {
     --sheet-color: #ffdfdf;
     --ink-color: #302726;
