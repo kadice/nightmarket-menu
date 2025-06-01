@@ -27,11 +27,11 @@
             class="image-bg fixed inset-0 -z-1 w-full min-h-screen bg-fixed bg-contain bg-center bg-[url('/image/bg-real.jpg')] blur-[4px] scale-180">
         </div>
 
-        <div class="min-w-[56rem] min-h-screen bg-black/20 flex justify-center">
+        <div class="w-full md:w-[56rem] md:min-w-[56rem] min-h-screen bg-black/20 md:flex justify-center">
 
             <!-- MENU -->
             <div
-                class="menu min-w-[28rem] h-fit px-4 py-6 m-6 border-2 border-gray-400 font-bold bg-[var(--sheet-color)] text-[var(--ink-color)]">
+                class="menu min-w-[28rem] w-[28rem] h-fit px-4 py-6 m-6 mx-auto border-2 border-gray-400 font-bold bg-[var(--sheet-color)] text-[var(--ink-color)]">
 
                 <!-- 標題區 -->
                 <div class="grid gap-y-3 mb-1">
@@ -108,8 +108,8 @@
             </div>
 
             <!-- 工具箱 -->
-            <div class="p-4" v-if="printMode == false">
-                <div class="bg-yellow-50 border-4 border-[#bd4747] rounded-lg shadow-2xl flex flex-col gap-2 p-4 m-2">
+            <div class="max-w-[28rem] mx-auto md:p-4 mt-2 mb-8" v-if="printMode == false">
+                <div class="bg-yellow-50 border-4 border-[#bd4747] rounded-lg shadow-2xl flex flex-col gap-2 p-4">
                     <!-- 公告 -->
                     <div
                         class="notice w-full h-40 p-2 bg-white text-black font-semibold rounded-lg shadow-inner border border-gray-300 overflow-y-auto whitespace-pre-wrap leading-relaxed text-[18px] divide-y divide-gray-300">
