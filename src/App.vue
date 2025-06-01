@@ -31,7 +31,7 @@
 
             <!-- MENU -->
             <div
-                class="menu min-w-[28rem] max-w-[28rem] h-fit px-4 py-6 m-6 border-2 border-gray-400 font-bold bg-[var(--sheet-color)] text-[var(--ink-color)]">
+                class="menu min-w-[34rem] h-fit px-4 py-6 m-6 border-2 border-gray-400 font-bold bg-[var(--sheet-color)] text-[var(--ink-color)]">
 
                 <!-- 標題區 -->
                 <div class="grid gap-y-3 mb-1">
@@ -165,7 +165,7 @@ const categories = reactive([
             { short: '牛串', name: '超多汁牛肉烤串', name2: 'beef', price: 1500, msg: '嚴選拉札罕牛，這牛的肉比光戰還緊實，烤了也比光戰香', count: 0 },
             { short: '鳥串', name: 'DoDo鳥腿肉烤串', name2: 'dodo', price: 1500, msg: '渡渡鳥界滿級精選大腿肉，好吃程度不輸你家陸行鳥', count: 0 },
             { short: '魚串', name: '爆爆魚串', name2: 'fish', price: 2500, msg: '海賊眾說吃這魚可以加直爆，不管你信不信反正我是信了', count: 0 },
-            { short: '時蔬', name: '健康烤時蔬', name2: 'vegetable', price: 1500, msg: '蔬菜的使命就是幫你少一點罪惡感，烤了更像在做健康選擇', count: 0 },
+            { short: '時蔬', name: '健康烤時蔬', name2: 'vegetable', price: 1500, msg: '蔬菜的使命就是幫你少一點罪惡感，烤的更顯健康假象', count: 0 },
             { short: '烤香腸', name: '烤香腸', name2: 'sausage', price: 1500, msg: '對面澤中的學生放學都會來買，人手一支，一口爆汁！', count: 0 },
             //{ short: '香腸', name: '香腸泡菜', name2: 'sausage & pickled cabbage', price: 1000, msg: '泡菜才是靈魂，香腸只是載具，不接受單點香腸', count: 0 },
             { short: '焗蝦', name: '焗烤鮮蝦', name2: 'shrimp', price: 1500, msg: '搭配特製醬汁來食用，味道更是妙不可言', count: 0 },
