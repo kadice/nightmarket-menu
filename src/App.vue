@@ -266,7 +266,7 @@ const copyOrderText = () => {
 
 </script>
 
-<style scoped>
+<style>
 .notice > div > span {
     color: #777;
     font-size: 14px;
