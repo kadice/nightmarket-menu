@@ -186,7 +186,7 @@ const categories = reactive([
         name: '精選炸物 fried',
         items: [
             { short: '豆腐', name: '不是臭豆腐', name2: 'tofu', price: 1200, msg: '之前有客人抱怨蟹肉餅變成臭蟹肉餅，只好改賣炸豆腐', count: 0 },
-            { short: '花枝', name: '炸一堆花枝圈', name2: 'squid', price: 1500, msg: '我賣花枝圈的原則就是幹你娘塞爆！(售完為止)', count: 0 },
+            { short: '花枝', name: '炸一堆花枝圈', name2: 'squid', price: 2000, msg: '我賣花枝圈的原則就是幹你娘塞爆！(售完為止)', count: 0 },
             { short: '蟹餅', name: '炸蟹肉餅', name2: 'crab cake', price: 1200, msg: '製作過程中沒有真正螃蟹受傷，只有老闆燙傷', count: 0 },
             { short: '炸魚', name: '酥炸鮮魚塊', name2: 'fish', price: 1200, msg: '外表金酥脆，內底超Juicy，乎你呷嘎ㄟ彈舌', count: 0 },
         ],
