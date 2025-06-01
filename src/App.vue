@@ -172,11 +172,11 @@ const categories = reactive([
     {
         name: '炭燒串烤 grill',
         items: [
-            { short: '牛串', name: '超多汁牛肉烤串', name2: 'beef', price: 1500, msg: '嚴選拉札罕牛，這牛的肉比光戰還緊實，烤了也比光戰香', count: 0 },
-            { short: '鳥串', name: 'DoDo鳥腿肉烤串', name2: 'dodo', price: 1500, msg: '渡渡鳥界滿級精選大腿肉，好吃程度不輸你家陸行鳥', count: 0 },
-            { short: '魚串', name: '爆爆魚串', name2: 'fish', price: 2500, msg: '海賊眾說吃這魚可以加直爆，不管你信不信反正我是信了', count: 0 },
-            { short: '時蔬', name: '健康烤時蔬', name2: 'vegetable', price: 1500, msg: '蔬菜的使命就是幫你少一點罪惡感，烤了更像在做健康選擇', count: 0 },
-            { short: '烤香腸', name: '烤香腸', name2: 'sausage', price: 1500, msg: '對面澤中的學生放學都會來買，人手一支，一口爆汁！', count: 0 },
+            { short: '牛串', name: '超多汁牛肉烤串', name2: 'beef', price: 1200, msg: '嚴選拉札罕牛，這牛的肉比光戰還緊實，烤了也比光戰香', count: 0 },
+            { short: '鳥串', name: 'DoDo鳥腿肉烤串', name2: 'dodo', price: 1200, msg: '渡渡鳥界滿級精選大腿肉，好吃程度不輸你家陸行鳥', count: 0 },
+            { short: '魚串', name: '爆爆魚串', name2: 'fish', price: 2000, msg: '海賊眾說吃這魚可以加直爆，不管你信不信反正我是信了', count: 0 },
+            { short: '時蔬', name: '健康烤時蔬', name2: 'vegetable', price: 1200, msg: '蔬菜的使命就是幫你少一點罪惡感，烤了更像在做健康選擇', count: 0 },
+            { short: '烤香腸', name: '烤香腸', name2: 'sausage', price: 1000, msg: '對面澤中的學生放學都會來買，人手一支，一口爆汁！', count: 0 },
             //{ short: '香腸', name: '香腸泡菜', name2: 'sausage & pickled cabbage', price: 1000, msg: '泡菜才是靈魂，香腸只是載具，不接受單點香腸', count: 0 },
             { short: '焗蝦', name: '焗烤鮮蝦', name2: 'shrimp', price: 1500, msg: '搭配特製醬汁來食用，味道更是妙不可言', count: 0 },
             { short: '海螺', name: '烤海螺', name2: 'snail', price: 3000, msg: '老闆為這顆螺跑了四個市場，請尊重牠的旅程和價格', count: 0 },
@@ -185,18 +185,18 @@ const categories = reactive([
     {
         name: '精選炸物 fried',
         items: [
-            { short: '豆腐', name: '不是臭豆腐', name2: 'tofu', price: 1500, msg: '之前有客人抱怨蟹肉餅變成臭蟹肉餅，只好改賣炸豆腐', count: 0 },
-            { short: '花枝', name: '炸一堆花枝圈', name2: 'squid', price: 2000, msg: '我賣花枝圈的原則就是幹你娘塞爆！(售完為止)', count: 0 },
-            { short: '蟹餅', name: '炸蟹肉餅', name2: 'crab cake', price: 1500, msg: '製作過程中沒有真正螃蟹受傷，只有老闆燙傷', count: 0 },
-            { short: '炸魚', name: '酥炸鮮魚塊', name2: 'fish', price: 1500, msg: '外表金酥脆，內底超Juicy，乎你呷嘎ㄟ彈舌', count: 0 },
+            { short: '豆腐', name: '不是臭豆腐', name2: 'tofu', price: 1200, msg: '之前有客人抱怨蟹肉餅變成臭蟹肉餅，只好改賣炸豆腐', count: 0 },
+            { short: '花枝', name: '炸一堆花枝圈', name2: 'squid', price: 1500, msg: '我賣花枝圈的原則就是幹你娘塞爆！(售完為止)', count: 0 },
+            { short: '蟹餅', name: '炸蟹肉餅', name2: 'crab cake', price: 1200, msg: '製作過程中沒有真正螃蟹受傷，只有老闆燙傷', count: 0 },
+            { short: '炸魚', name: '酥炸鮮魚塊', name2: 'fish', price: 1200, msg: '外表金酥脆，內底超Juicy，乎你呷嘎ㄟ彈舌', count: 0 },
         ],
     },
     {
         name: '飲品 drink',
         items: [
             { short: '紅茶', name: '紅茶', name2: 'black tea', price: 1000, msg: '烏爾達哈紅茶，解膩好選擇，解完記得再多吃兩串', count: 0 },
-            { short: '奶茶', name: '奶茶', name2: 'milk tea', price: 1200, msg: '早餐店奶茶，沒有賣鮮奶茶，因為老闆喜歡早餐店奶茶', count: 0 },
-            { short: '豆漿', name: '豆漿', name2: 'soy milk', price: 1500, msg: '有客人問怎麼沒有紅茶豆漿，啊你就各買一杯自己加', count: 0 },
+            { short: '奶茶', name: '奶茶', name2: 'milk tea', price: 1000, msg: '早餐店奶茶，沒有賣鮮奶茶，因為老闆喜歡早餐店奶茶', count: 0 },
+            { short: '豆漿', name: '豆漿', name2: 'soy milk', price: 1200, msg: '有客人問怎麼沒有紅茶豆漿，啊你就各買一杯自己加', count: 0 },
             { short: '麥仔茶', name: '麥仔茶', name2: 'barley tea', price: 1000, msg: '○○味麥仔～茶～(唱)(老闆沒接業配，但歡迎洽談)', count: 0 },
             { short: '柳丁汁', name: '柳丁汁', name2: 'orange juice', price: 1200, msg: '純手工現榨，柳丁本人也不確定為什麼要這麼累', count: 0 },
         ],
