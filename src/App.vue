@@ -267,7 +267,7 @@ const copyOrderText = () => {
 </script>
 
 <style>
-.notice > div > span {
+.notice>div>span {
     color: #777;
     font-size: 14px;
     padding-right: 4px;
@@ -296,11 +296,11 @@ const copyOrderText = () => {
 }
 
 .title {
-    font-family: '標楷體';
+    font-family: '標楷體', 'cwTeXKai', serif;
 }
 
 .info {
-    font-family: '標楷體';
+    font-family: '標楷體', 'cwTeXKai', serif;
 }
 
 .price {
@@ -338,5 +338,26 @@ const copyOrderText = () => {
 
 button {
     cursor: pointer;
+}
+
+@font-face {
+    font-family: 'cwTeXKai';
+    src: url('webfont.eot');
+    /* IE9 Compat Modes /
+src: url('webfont.eot?#iefix') format('embedded-opentype'), / IE6-IE8 /
+url('webfont.woff2') format('woff2'), / Super Modern Browsers /
+url('webfont.woff') format('woff'), / Pretty Modern Browsers /
+url('webfont.ttf') format('truetype'), / Safari, Android, iOS /
+url('webfont.svg#svgFontName') format('svg'); / Legacy iOS */
+}
+
+@media (max-width: 640px) {
+
+    /* 640px 以下通常代表手機尺寸 */
+    .menu {
+        width: 28rem !important;
+        max-width: 28rem !important;
+        min-width: 28rem !important;
+    }
 }
 </style>
