@@ -31,7 +31,7 @@
 
             <!-- MENU -->
             <div
-                class="menu min-w-[28rem] max-w-[56rem] h-fit px-4 py-6 m-6 border-2 border-gray-400 font-bold bg-[var(--sheet-color)] text-[var(--ink-color)]">
+                class="menu min-w-[28rem] h-fit px-4 py-6 m-6 border-2 border-gray-400 font-bold bg-[var(--sheet-color)] text-[var(--ink-color)]">
 
                 <!-- 標題區 -->
                 <div class="grid gap-y-3 mb-1">
@@ -309,6 +309,7 @@ const copyOrderText = () => {
 
 .msg {
     font-size: 13px;
+    white-space: nowrap;
 }
 
 .togo-img {
