@@ -126,6 +126,12 @@
                         class="bg-[#bd4747] text-white font-bold py-2 px-3 rounded hover:bg-red-700 transition-all duration-150">
                         這是一顆神奇的按鈕，咻咻咻～
                     </button>
+
+                    <!-- 送單按鈕 -->
+                    <button @click="clear"
+                        class="bg-[#aaa] text-white font-bold py-2 px-3 rounded hover:bg-[#999] transition-all duration-150">
+                        清空重算
+                    </button>
                 </div>
             </div>
         </div>
@@ -284,6 +290,14 @@ const orderText = computed(() => {
 
 const copyOrderText = () => {
     navigator.clipboard.writeText(orderText.value)
+}
+
+const clear = () => {
+    for (const cate of categories) {
+        for (const item of cate.items) {
+            item.count = 0
+        }
+    }
 }
 
 </script>
