@@ -61,10 +61,6 @@
                             {{ item }}
                         </div>
                     </div>
-                    <!-- 提示訊息 -->
-                    <div v-if="copiedMessage" class="mt-2 text-green-600 text-center transition-opacity duration-500">
-                        已複製：「{{ copiedMessage }}」
-                    </div>
 
                     <button @click="clear"
                         class="bg-[#aaa] text-white font-bold py-2 px-3 rounded hover:bg-[#999] transition-all duration-150">
@@ -85,39 +81,39 @@ const categories = reactive([
     {
         categoryName: '串烤1',
         items: [
-            { short: '牛', price: 400, count: 0 },
-            { short: '雞', price: 400, count: 0 },
-            { short: '魚', price: 700, count: 0 },
-            { short: '菜', price: 400, count: 0 },
+            { short: '牛串', safe: '牛串', price: 400, count: 0 },
+            { short: '雞串', safe: '鳥串', price: 400, count: 0 },
+            { short: '魚串', safe: '魚串', price: 700, count: 0 },
+            { short: '時蔬', safe: '時蔬', price: 400, count: 0 },
         ],
     },
     {
         categoryName: '串烤2',
         items: [
-            { short: '香腸', price: 300, count: 0 },
-            { short: '大蒜', price: 300, count: 0 },
-            { short: '焗蝦', price: 500, count: 0 },
-            { short: '海螺', price: 1000, count: 0 },
+            { short: '香腸', safe: '香腸', price: 300, count: 0 },
+            { short: '大蒜', price: 0, count: 0 },
+            { short: '焗蝦', safe: '局蝦', price: 500, count: 0 },
+            { short: '海螺', safe: '海螺', price: 1000, count: 0 },
         ],
     },
     {
         categoryName: '炸物',
         items: [
-            { short: '豆腐', price: 400, count: 0 },
-            { short: '泡菜', price: 400, count: 0 },
-            { short: '花枝', price: 700, count: 0 },
-            { short: '蟹餅', price: 400, count: 0 },
-            { short: '炸魚', price: 400, count: 0 },
+            { short: '豆腐', safe: '豆腐', price: 400, count: 0 },
+            { short: '泡菜', price: 0, count: 0 },
+            { short: '花枝', safe: '花枝', price: 700, count: 0 },
+            { short: '蟹餅', safe: '蟹餅', price: 400, count: 0 },
+            { short: '炸魚', safe: '炸魚', price: 400, count: 0 },
         ],
     },
     {
         categoryName: '飲料',
         items: [
-            { short: '紅茶', price: 300, count: 0 },
-            { short: '乃茶', price: 300, count: 0 },
-            { short: '豆漿', price: 400, count: 0 },
-            { short: '麥仔茶', price: 300, count: 0 },
-            { short: '柳丁汁', price: 400, count: 0 },
+            { short: '紅茶', safe: '紅茶', price: 300, count: 0 },
+            { short: '奶茶', safe: '乃茶', price: 300, count: 0 },
+            { short: '豆漿', safe: '豆漿', price: 400, count: 0 },
+            { short: '麥仔茶', safe: '麥仔茶', price: 300, count: 0 },
+            { short: '柳丁汁', safe: '柳丁汁', price: 400, count: 0 },
         ],
     },
     {
@@ -157,20 +153,59 @@ const msgList = computed(() => {
     else if (sum > 0) {
         msgs.push('按巨集：確認訂單-沒有香腸');
     }
+
     const hasGrill = categories.some(cate => cate.categoryName === '串烤1' && cate.items.some(item => item.count > 0));
     if (hasGrill) {
         msgs.push('按巨集：串考要什麼口味？');
     }
+
     const hasFried = categories.some(cate => cate.categoryName === '炸物' && cate.items.some(item => ['花枝', '蟹餅', '炸魚'].includes(item.short) && item.count > 0));
     if (hasFried) {
         msgs.push('按巨集：炸的要什麼醤？');
     }
 
     if (sum > 0) {
-        msgs.push(`祢的單都好了哦! 一共是${sum}`);
+        //從選擇的品項中隨機挑2樣組成字串
+        const checkItems = []
+        const selectedItems = categories.flatMap(cate => cate.items.filter(item => (item.count > 0) && (item.safe !== undefined)));
+        if (selectedItems.length > 1) {
+            const randomItems = selectedItems.sort(() => 0.5 - Math.random()).slice(0, 2);
+            randomItems.forEach(item => {
+                checkItems.push(`${item.safe}`);
+            });
+        }
+        const checkStr = checkItems.join('...')
+
+        let finalMsg = "";
+        if (selectedItems.length > 0) {
+            finalMsg += `${checkStr}......好、來，都好了這樣是${sum}，`
+        }
+        else {
+            finalMsg += `這樣是${sum}，`;
+        }
+        let randomMsg;
+        const hasDonate = categories.some(cate => cate.categoryName === '斗內' && cate.items.some(item => item.count > 0));
+        if (hasDonate) {
+            randomMsg = [
+                '感謝支持！',
+                '老板感謝尼的支持！',
+                '感謝贊助！',
+            ];
+        }
+        else {
+            randomMsg = [
+                '小心拿欸！',
+                '好吃下次再來！',
+            ];
+        }
+        const randomIndex = Math.floor(Math.random() * randomMsg.length);
+        finalMsg += randomMsg[randomIndex];
+        msgs.push(finalMsg);
     }
+
     return msgs;
 })
+
 const copiedIndex = ref(null)
 
 function copyToClipboard(text, index) {
