@@ -403,36 +403,32 @@ url('webfont.ttf') format('truetype'), / Safari, Android, iOS /
 url('webfont.svg#svgFontName') format('svg'); / Legacy iOS */
 }
 
+
+
+
+
+
+
+.menu {
+    width: 544px !important;
+    /* 34em * 16px = 544px */
+    max-width: 544px !important;
+    min-width: 544px !important;
+}
+
+/**手機模式*/
+.main-container {
+    width: 600px !important;
+    max-width: 600px !important;
+    min-width: 600px !important;
+}
+
 /**正常 900PX以上兩欄式 */
 @media (min-width: 900px) {
-    .menu {
-        width: 544px !important;
-        /* 34em * 16px = 544px */
-        max-width: 544px !important;
-        min-width: 544px !important;
-    }
-
     .main-container {
         width: 1100px !important;
         max-width: 1100px !important;
         min-width: 1100px !important;
     }
 }
-
-/**手機模式*/
-    .info-left {
-        width: 100%;
-    }
-    .menu {
-        width: 544px !important;
-        /* 34em * 16px = 544px */
-        max-width: 544px !important;
-        min-width: 544px !important;
-    }
-
-    .main-container {
-        width: 600px !important;
-        max-width: 600px !important;
-        min-width: 600px !important;
-    }
 </style>
