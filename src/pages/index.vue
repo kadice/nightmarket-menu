@@ -116,7 +116,7 @@
                     <div
                         class="notice | w-full h-40 p-2 bg-white text-black font-semibold rounded-lg shadow-inner 
                         border border-gray-300 overflow-y-auto whitespace-pre-wrap leading-relaxed divide-y divide-gray-300">
-
+                        <div>🎉凱哥燒烤快閃店圓滿大成功，感謝各位的支持！我們下次見</div>
                         <div>🔥凱哥燒烤🔥將於6/21快閃登場！敬請期待</div>
                         <div><span>06/08 08:30</span>老闆決定來個絕地特價，歡迎多點幾串享受爆買快感！</div>
                         <div><span>06/01 16:14</span>是真的沒有臭豆腐，不要再問了</div>
