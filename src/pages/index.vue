@@ -33,7 +33,7 @@
         <div class="main-container | w-full mx-auto min-h-screen bg-black/20 md:flex justify-center">
             <!-- MENU -->
             <div
-                class="menu | h-fit mx-auto px-4 py-6 m-6 border-2 border-gray-400 font-bold bg-[var(--sheet-color)] text-[var(--ink-color)]">
+                class="menu | h-fit mx-auto px-4 py-6 m-6 border-1 border-gray-400 font-bold bg-[var(--sheet-color)] text-[var(--ink-color)]">
 
                 <!-- 標題區 -->
                 <div class="grid gap-y-3 mb-1">
