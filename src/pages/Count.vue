@@ -12,10 +12,10 @@
             class="image-bg fixed inset-0 -z-1 w-full min-h-screen bg-fixed bg-contain bg-center bg-[url('/image/bg-real.jpg')] blur-[4px] scale-180">
         </div>
 
-        <div class="w-full min-h-screen bg-black/20 justify-center">
+        <div class="main-container | w-full mx-auto min-h-screen bg-black/20 justify-center">
             <!-- MENU -->
             <div
-                class="menu min-w-[28rem] w-[28rem] h-fit p-4 m-4 mx-auto border-2 border-gray-400 font-bold bg-[var(--sheet-color)] text-[var(--ink-color)]">
+                class="menu | h-fit mx-auto p-4 m-0 border-2 border-gray-400 font-bold bg-[var(--sheet-color)] text-[var(--ink-color)]">
 
                 <div class="grid gap-y-2">
                     <div v-for="(category, cIndex) in categories" :key="cIndex"
@@ -49,7 +49,7 @@
             </div>
 
             <!-- 工具箱 -->
-            <div class="max-w-[28rem] mx-auto mt-2 mb-8" v-if="printMode == false">
+            <div class="max-w-[28em] mx-auto mt-2 mb-8" v-if="printMode == false">
                 <div class="bg-yellow-50 border-4 border-[#bd4747] rounded-lg shadow-2xl flex flex-col gap-2 p-4">
                     <!-- 公告 -->
                     <div
@@ -63,7 +63,7 @@
                     </div>
 
                     <button @click="clear"
-                        class="bg-[#aaa] text-white font-bold py-2 px-3 rounded hover:bg-[#999] transition-all duration-150">
+                        class="bg-[#aaa] text-white font-bold py-2 px-3 rounded hover:bg-[#999] transition-all duration-150 w-fit">
                         清空重算
                     </button>
                 </div>
@@ -308,7 +308,7 @@ const clear = () => {
 
 </script>
 
-<style>
+<style lang="css" scoped>
 /* .item {
     border: var(--ink-color) 2px solid;
 }
@@ -360,7 +360,7 @@ const clear = () => {
 }
 
 .msg {
-    font-size: 13px;
+    font-size: 12px;
     white-space: nowrap;
 }
 
@@ -403,13 +403,19 @@ url('webfont.ttf') format('truetype'), / Safari, Android, iOS /
 url('webfont.svg#svgFontName') format('svg'); / Legacy iOS */
 }
 
-@media (max-width: 640px) {
-
-    /* 640px 以下通常代表手機尺寸 */
+/**正常 900PX以上兩欄式 */
+@media (min-width: 900px) {
     .menu {
-        width: 28rem !important;
-        max-width: 28rem !important;
-        min-width: 28rem !important;
+        width: 544px !important;
+        /* 34em * 16px = 544px */
+        max-width: 544px !important;
+        min-width: 544px !important;
+    }
+
+    .main-container {
+        width: 1100px !important;
+        max-width: 1100px !important;
+        min-width: 1100px !important;
     }
 }
 </style>

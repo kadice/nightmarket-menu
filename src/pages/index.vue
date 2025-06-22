@@ -1,8 +1,8 @@
 <template>
     <div class="scope-root relative min-h-screen flex md:justify-center items-start">
-    <div style="position:absolute; right: 0;">
-        <router-link to="/count">。</router-link>
-    </div>
+        <div style="position:absolute; right: 0;">
+            <router-link to="/count">。</router-link>
+        </div>
         <div style="display: none">
             <img src="/image/0.png">
             <img src="/image/1.png">
@@ -30,10 +30,10 @@
             class="image-bg fixed inset-0 -z-1 w-full min-h-screen bg-fixed bg-contain bg-center bg-[url('/image/bg-real.jpg')] blur-[4px] scale-180">
         </div>
 
-        <div class="w-full md:w-[56rem] md:min-w-[56rem] min-h-screen bg-black/20 md:flex justify-center">
+        <div class="main-container | w-full mx-auto min-h-screen bg-black/20 md:flex justify-center">
             <!-- MENU -->
             <div
-                class="menu min-w-[28rem] w-[28rem] h-fit px-4 py-6 m-6 mx-auto border-2 border-gray-400 font-bold bg-[var(--sheet-color)] text-[var(--ink-color)]">
+                class="menu | h-fit mx-auto px-4 py-6 m-6 border-2 border-gray-400 font-bold bg-[var(--sheet-color)] text-[var(--ink-color)]">
 
                 <!-- 標題區 -->
                 <div class="grid gap-y-3 mb-1">
@@ -110,11 +110,12 @@
             </div>
 
             <!-- 工具箱 -->
-            <div class="max-w-[28rem] mx-auto md:mx-0 md:p-4 mt-2 mb-8" v-if="printMode == false">
+            <div class="toolbox | mx-auto md:mx-0 md:p-4 mt-2 mb-8" v-if="printMode == false">
                 <div class="bg-yellow-50 border-4 border-[#bd4747] rounded-lg shadow-2xl flex flex-col gap-2 p-4">
                     <!-- 公告 -->
                     <div
-                        class="notice w-full h-40 p-2 bg-white text-black font-semibold rounded-lg shadow-inner border border-gray-300 overflow-y-auto whitespace-pre-wrap leading-relaxed text-[18px] divide-y divide-gray-300">
+                        class="notice | w-full h-40 p-2 bg-white text-black font-semibold rounded-lg shadow-inner 
+                        border border-gray-300 overflow-y-auto whitespace-pre-wrap leading-relaxed divide-y divide-gray-300">
 
                         <div>🔥凱哥燒烤🔥將於6/21快閃登場！敬請期待</div>
                         <div><span>06/08 08:30</span>老闆決定來個絕地特價，歡迎多點幾串享受爆買快感！</div>
@@ -303,15 +304,7 @@ const clear = () => {
 
 </script>
 
-<style>
-.notice>div>span {
-    color: #777;
-    font-size: 14px;
-    padding-right: 4px;
-    display: block;
-    margin-bottom: -7px;
-}
-
+<style lang="css" scoped>
 .scope-root {
     --sheet-color: #ffdfdf;
     --ink-color: #302726;
@@ -332,6 +325,28 @@ const clear = () => {
     box-shadow: 5px 10px 20px #333, -2px -1px 5px #333;
 }
 
+.toolbox {
+    width: 448px;
+    max-width: 448px;
+    min-width: 448px;
+    /* 28em * 16px = 448px */
+}
+
+.notice {
+    font-size: 18px;
+    font-weight: bold;
+    overflow-y: auto;
+}
+
+/*日期 */
+.notice>div>span {
+    color: #777;
+    font-size: 14px;
+    padding-right: 4px;
+    display: block;
+    margin-bottom: -7px;
+}
+
 .title {
     font-family: '標楷體', 'cwTeXKai', serif;
 }
@@ -345,8 +360,8 @@ const clear = () => {
 }
 
 .msg {
-    font-size: 13px;
-    white-space: nowrap;
+    font-size: 12px;
+    /* white-space: nowrap; */
 }
 
 .togo-img {
@@ -388,13 +403,19 @@ url('webfont.ttf') format('truetype'), / Safari, Android, iOS /
 url('webfont.svg#svgFontName') format('svg'); / Legacy iOS */
 }
 
-@media (max-width: 640px) {
-
-    /* 640px 以下通常代表手機尺寸 */
+/**正常 900PX以上兩欄式 */
+@media (min-width: 900px) {
     .menu {
-        width: 28rem !important;
-        max-width: 28rem !important;
-        min-width: 28rem !important;
+        width: 544px !important;
+        /* 34em * 16px = 544px */
+        max-width: 544px !important;
+        min-width: 544px !important;
+    }
+
+    .main-container {
+        width: 1100px !important;
+        max-width: 1100px !important;
+        min-width: 1100px !important;
     }
 }
 </style>
