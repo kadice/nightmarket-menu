@@ -42,9 +42,9 @@
                         凱　哥　燒　烤
                     </div>
 
-                    <div class="info flex w-full px-1 pt-2">
-                        <span class="flex-1">小本經營，只收現金</span>
-                        <span class="relative text-right">
+                    <div class="info | flex w-full px-1 pt-2">
+                        <span class="info-left | flex-1">小本經營，只收現金</span>
+                        <span class="info-right | relative text-right">
                             <img class="togo-img" src="/image/checked.png">
                             □外帶 □內用 桌號：＿＿合計：＿＿＿＿＿gil
                             <!-- 總價 -->
@@ -418,4 +418,21 @@ url('webfont.svg#svgFontName') format('svg'); / Legacy iOS */
         min-width: 1100px !important;
     }
 }
+
+/**手機模式*/
+    .info-left {
+        width: 100%;
+    }
+    .menu {
+        width: 544px !important;
+        /* 34em * 16px = 544px */
+        max-width: 544px !important;
+        min-width: 544px !important;
+    }
+
+    .main-container {
+        width: 600px !important;
+        max-width: 600px !important;
+        min-width: 600px !important;
+    }
 </style>
